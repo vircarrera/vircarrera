@@ -1,0 +1,46 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.e-menu__bottom {
+  @include display-flex;
+  .menu-item {
+    a {
+      color: $white;
+      font-size: $fs-small;
+      font-weight: $fw-bold;
+      @include transition(color 0.3s linear);
+      @include respond-below(lg) {
+        margin-right: $h-unit;
+      }
+    }
+    a:hover{
+      color: $lily-light;   
+    }
+  }
+  .menu-item:last-child {
+    a {
+      @include respond-below(lg) {
+        margin-right: 0;
+      }
+    }
+  }
+  @include respond-below(lg) {
+    @include flex(0, 0, 100%);
+    @include justify-content(center);
+  }
+  @include respond-between(sm, lg) {
+    margin-bottom: $v-unit-m;
+  }
+  @include respond-above(lg) {
+    @include flex(0, 0, 30%);
+    @include justify-content(space-between);
+  }
+  @include respond-below(sm) {
+    margin-bottom: $v-unit-l;
+  }
+}

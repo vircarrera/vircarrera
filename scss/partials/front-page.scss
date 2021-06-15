@@ -1,0 +1,88 @@
+//
+// Vars
+//
+
+$titleMarginBottomLg: 40px;
+
+//
+// Styles
+//
+
+body {
+  &.home {
+    background: $white;
+  }
+}
+
+.home {
+  h1 {
+    position: relative;
+    z-index: 10;
+  }
+
+  .b-our-courses,
+  .b-opinions,
+  .b-contact {
+    position: relative;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: -1;
+      background: $grey;
+      top: 0;
+      bottom: 0;
+      left: -15px;
+      right: -15px;
+    }
+  }
+
+  section.section-opinion,
+  section.b-contact {
+    margin-bottom: 0;
+  }
+
+  @include respond-above(md) {
+    section {
+      margin-bottom: $h-unit-xl;
+    }
+
+    .c-title {
+      text-align: center;
+    }
+  }
+
+  @include respond-between(sm, tb) {
+    section {
+      margin-bottom: $h-unit-xl;
+    }
+
+    .b-our-courses,
+    .b-opinions,
+    .b-contact {
+      &::before {
+        left: -30px;
+        right: -30px;
+      }
+    }
+  }
+
+  @include respond-above(sm) {
+    h1 {
+      text-align: center;
+      margin-bottom: $titleMarginBottomLg;
+    }
+  }
+
+  @include respond-below(sm) {
+    section {
+      margin-bottom: $h-unit-l;
+    }
+
+    h1 {
+      text-align: left;
+      margin-top: $h-unit-xl;
+      margin-bottom: $h-unit-l;
+    }
+  }
+}

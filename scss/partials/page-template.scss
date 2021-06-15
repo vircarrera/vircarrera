@@ -1,0 +1,62 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.page-template-default:not(.home):not(.blog):not(.single) {
+  .content {
+    min-height: 50vh;
+    padding-top: $unit100;
+    padding-bottom: $unit100;
+
+    h1,
+    h2,
+    h3,
+    h4,
+    p {
+      margin-bottom: $v-unit-m;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4 {
+      font-weight: bolder;
+      margin-bottom: $v-unit-m;
+    }
+
+    h1 {
+      font-size: $fs-hero;
+    }
+
+    h2 {
+      font-size: 25px;
+    }
+
+    h3 {
+      font-size: $fs-heading;
+    }
+
+    h4 {
+      font-size: $fs-medium;
+    }
+
+    p {
+      font-size: $fs-standard;
+      margin-bottom: $v-unit-l;
+    }
+
+    ul {
+      li {
+        font-size: $fs-standard;
+      }
+    }
+
+    strong {
+      font-weight: bolder;
+    }
+  }
+}

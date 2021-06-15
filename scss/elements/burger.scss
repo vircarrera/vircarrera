@@ -1,0 +1,77 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.e-burger {
+  position: relative;
+  z-index: 100;
+  transform: rotate(0deg);
+  transition: all 0.6s;
+
+  img {
+    transition: all 0.6s;
+  }
+
+  @include respond-above(md) {
+    display: none;
+  }
+  @include respond-below(md) {
+    display: block;
+
+    .page-template-page-investigaciones &,
+    .blog &,
+    .page-template-page-personas &,
+    .single-post &,
+    .page-template-page-cursos &,
+    .page-template-default &,
+    .page-template &,
+    .archive &{
+      .dark {
+        display: block;
+      }
+
+      .light {
+        display: none;
+      }
+    }
+
+    .single-persona &,
+    .home & {
+      .light {
+        display: block;
+      }
+
+      .dark {
+        display: none;
+      }
+    }
+  }
+
+  @include respond-between(sm, md) {
+    .single-curso & {
+      .light {
+        display: block;
+      }
+
+      .dark {
+        display: none;
+      }
+    }
+  }
+
+  @include respond-below(sm) {
+    .single-curso & {
+      .light {
+        display: none;
+      }
+
+      .dark {
+        display: block;
+      }
+    }
+  }
+}

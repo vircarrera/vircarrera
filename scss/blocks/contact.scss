@@ -1,0 +1,184 @@
+//
+// Vars
+//
+$contact-padding-top-bottom-desktop: 50px;
+//
+// Styles
+//
+
+/* Contacto Juanlu */
+
+.b-contact {
+  position: relative;
+  padding: $contact-padding-top-bottom-desktop 0;
+
+  &.green-noise {
+    overflow-y: hidden;
+
+    &::before {
+      transform: translateY(-$contact-padding-top-bottom-desktop);
+    }
+  }
+
+  .container {
+    display: flex;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    justify-content: flex-end;
+  }
+
+  .c-title {
+    flex: 0 100%;
+    margin-bottom: $v-unit-l;
+    color: $brown;
+    text-align: center;
+    position: relative;
+    z-index: 1;
+  }
+
+  .escrito {
+    @include flex(0, 0, 100%);
+    margin: 0 auto;
+    margin-bottom: $v-unit-l;
+    max-width: 650px;
+
+    a {
+      color: $brown;
+      padding: $unit;
+      transition: $transition;
+      background-color: $gradientgrey;
+      @include border-brown;
+      border-radius: 50%;
+      @include box-shadow($boxshadowsoft);
+
+      &:hover {
+        color: $lime;
+      }
+    }
+  }
+
+  .formulario {
+    flex: 0 100%;
+    max-width: 650px;
+    margin: 0 auto;
+
+    .nombre,
+    .mail,
+    .mensaje {
+      display: block;
+      margin-bottom: 0px;
+    }
+
+    .contacto__nombre,
+    .contacto__mail,
+    .contacto__mensaje {
+      width: 100%;
+      border: none;
+      @include border-brown;
+      border-radius: $br-big;
+      padding: 15px;
+    }
+
+    .contacto__nombre:focus,
+    .contacto__mail:focus,
+    .contacto__mensaje:focus {
+      width: 100%;
+      border: none;
+      border: $border $green;
+      padding: 15px;
+      background-color: $white;
+    }
+
+    .contacto__nombre + span,
+    .contacto__mail + span,
+    .contacto__mensaje + span {
+      color: $brown;
+      padding-top: 10px;
+      font-size: 14px;
+    }
+
+    .wpcf7-response-output {
+      margin: 0;
+      margin-bottom: 60px;
+      padding: 30px;
+      border: none;
+      background-color: $green;
+      color: white;
+      border-radius: 10px;
+    }
+
+    .wpcf7-acceptance {
+      display: block;
+      margin: 15px 0;
+
+      a {
+        color: $green;
+        transition: $transition;
+
+        &:hover {
+          color: $lime;
+        }
+      }
+    }
+
+    .contacto__datos {
+      text-align: center;
+      padding: 0 50px;
+      margin-bottom: 60px;
+    }
+
+    .contacto__datos a {
+      display: block;
+      margin: 30px auto;
+      width: 120px;
+      padding: 10px 15px;
+      border: 1px solid $brown;
+      border-radius: 30px;
+      color: $brown;
+    }
+  }
+
+  @include respond-above(sm) {
+    .c-title {
+      margin-top: $v-unit-l;
+    }
+
+    figure {
+      img {
+        max-height: 100%;
+        z-index: -1;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+      }
+    }
+  }
+
+  @include respond-below(sm) {
+    .container {
+      flex-direction: column;
+      align-items: center;
+
+      figure {
+        z-index: -1;
+        position: absolute;
+        top: 0;
+        height: 100%;
+        overflow: hidden;
+
+        img {
+          height: 112vh;
+          object-fit: cover;
+          transform: translateY(-50px);
+        }
+      }
+    }
+
+    .formulario {
+      .wpcf7 .ajax-loader {
+        display: block;
+        margin: 10px auto -35px;
+      }
+    }
+  }
+}

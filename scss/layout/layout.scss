@@ -1,0 +1,67 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.w-1310 {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding-left: $v-unit;
+  padding-right: $v-unit;
+
+  @include respond-between(sm, md) {
+    padding-left: $h-unit-l;
+    padding-right: $h-unit-l;
+  }
+}
+
+.w-1000 {
+  max-width: 1000px;
+  margin: 0 auto;
+  padding-left: $v-unit;
+  padding-right: $v-unit;
+
+  @include respond-between(sm, md) {
+    padding-left: $h-unit-l;
+    padding-right: $h-unit-l;
+  }
+}
+
+.w-800 {
+  max-width: 1310px;
+  margin: 0 auto;
+  padding-left: $v-unit;
+  padding-right: $v-unit;
+
+  @include respond-between(sm, md) {
+    padding-left: $h-unit-l;
+    padding-right: $h-unit-l;
+  }
+}
+
+.w-800-600 {
+  margin: 0 auto;
+
+  @include respond-above(md) {
+    max-width: 1310px;
+    padding-left: $v-unit;
+    padding-right: $v-unit;
+  }
+
+  @include respond-below(md) {
+    max-width: 800px;
+  }
+
+  @include respond-between(sm, md) {
+    padding-left: $h-unit-l;
+    padding-right: $h-unit-l;
+  }
+
+  @include respond-below(sm) {
+    padding-left: $h-unit-l;
+    padding-right: $h-unit-l;
+  }
+}

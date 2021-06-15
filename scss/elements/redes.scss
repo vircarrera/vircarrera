@@ -1,0 +1,36 @@
+// vars
+
+// styles
+
+.e-redes {
+  @include display-flex();
+  @include justify-content(center);
+
+  li {
+    margin: 0 $v-unit-s;
+
+    a {
+      display: block;
+    }
+
+    .cta.cta-button {
+      width: $unit50;
+      height: $unit50;
+      padding: 12px;
+    }
+  }
+
+  @include respond-above(lg) {
+    transform: translateY($v-unit-xxxl);
+  }
+
+  @include respond-below(lg) {
+    transform: translateY(250px);
+
+    .cv {
+      font-size: $fs-small;
+      padding: 15px !important;
+      font-weight: bolder;
+    }
+  }
+}

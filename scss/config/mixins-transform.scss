@@ -1,0 +1,69 @@
+@mixin transform-translate($left, $top) {
+  -webkit-transform: translate($left, $top);
+  -ms-transform: translate($left, $top);
+  -moz-transform: translate($left, $top);
+  -o-transform: translate($left, $top);
+  transform: translate($left, $top);
+}
+
+@mixin transform-rotate($variable) {
+  -webkit-transform: rotate($variable);
+  -ms-transform: rotate($variable);
+  -moz-transform: rotate($variable);
+  -o-transform: rotate($variable);
+  transform: rotate($variable);
+}
+
+@mixin transform-rotateX($variable) {
+  -webkit-transform: rotateX($variable);
+  -moz-transform: rotateX($variable);
+  -o-transform: rotateX($variable);
+  -ms-transform: rotateX($variable);
+  transform: rotateX($variable);
+}
+
+@mixin transform-rotateY($variable) {
+  -webkit-transform: rotateY($variable);
+  -moz-transform: rotateY($variable);
+  -o-transform: rotateY($variable);
+  -ms-transform: rotateY($variable);
+  transform: rotateY($variable);
+}
+
+@mixin transform-origin($variable) {
+  -webkit-transform-origin: ($variable);
+  -ms-transform-origin: ($variable);
+  transform-origin: ($variable);
+}
+
+@mixin transform($variable) {
+  -webkit-transform: $variable;
+  -moz-transform: $variable;
+  -o-transform: $variable;
+  -ms-transform: $variable;
+  transform: $variable;
+}
+
+@mixin transform-scale($variable) {
+  -webkit-transform: translate(0) scale($variable);
+  -ms-transform: scale($variable);
+  transform: scale($variable);
+}
+
+@mixin transform-skew($value) {
+  -webkit-transform: skew($value);
+  -ms-transform: skew($value);
+  transform: skew($value);
+}
+
+@mixin transform-skewY($value) {
+  -webkit-transform: skewY($value);
+  -ms-transform: skewY($value);
+  transform: skewY($value);
+}
+
+@mixin transform-skewX($value) {
+  -webkit-transform: skewX($value);
+  -ms-transform: skewX($value);
+  transform: skewX($value);
+}

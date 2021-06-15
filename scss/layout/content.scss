@@ -1,0 +1,47 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.c-content {
+  &.c-entries {
+    @include display-flex;
+    @include flex-wrap(wrap);
+    @include align-items(flex-start);
+    @include justify-content(center);
+
+    .b-card {
+      margin-bottom: $v-unit-l;
+    }
+
+    .b-pager {
+      @include flex(0, 0, 100%);
+    }
+  }
+
+  &.b-article {
+    min-height: 60vh;
+  }
+}
+
+.content {
+  &.blog,
+  &.cat {
+    position: relative;
+    overflow: hidden;
+    padding-top: $v-unit-xxl;
+
+    .e-title {
+      margin-bottom: $v-unit-l;
+    }
+
+    .b-card {
+      @include respond-below(sm) {
+        margin: 0 20px 30px;
+      }
+    }
+  }
+}

@@ -1,0 +1,47 @@
+// Vars
+
+//
+// Styles
+//
+
+.e-tag {
+  display: inline-block;
+  border-radius: $br-big;
+  padding: 9px $h-unit-m $unit 17px;
+  text-transform: uppercase;
+  font-weight: $fw-bold;
+  color: $white;
+  margin-bottom: 5px;
+  cursor: pointer;
+
+  a {
+    color: $white;
+  }
+
+  &.sin-categoria {
+    &::before {
+      content: none;
+    }
+
+    a {
+      color: rgba(255, 255, 255, 0);
+      pointer-events: none;
+    }
+  }
+
+  &::before {
+    content: "";
+    background: url(img/backgrounds/simbolo.svg) no-repeat;
+    background-size: contain;
+    width: 10px;
+    height: 10px;
+    display: inline-block;
+    margin-right: $unit;
+  }
+}
+
+.e-tags {
+  .c-subtitle {
+    margin-bottom: $v-unit-m;
+  }
+}

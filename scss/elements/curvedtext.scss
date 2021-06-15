@@ -1,0 +1,47 @@
+.contenedor {
+  position: absolute;
+
+  height: 450px;
+  width: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+
+  @include respond-above(lg) {
+    left: 190px;
+    top: 0px;
+  }
+  @include respond-below(lg) {
+    top: -50px;
+    right: -190px;
+  }
+}
+
+text {
+  fill: $brown;
+  font-family: "Fira Sans";
+  font-size: 33px;
+  letter-spacing: 2.5px;
+}
+
+tspan {
+  font-size: 37px;
+}
+
+path {
+  stroke: transparent;
+  fill: none;
+}
+
+.circleText {
+  position: absolute;
+  width: 400px;
+  height: 400px;
+  max-height: 75vh;
+  max-width: 75vw;
+  overflow: visible;
+  transform-origin: center center;
+  stroke-opacity: 0.5;
+  animation: turntext 40s 0s linear infinite;
+}

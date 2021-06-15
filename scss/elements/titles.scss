@@ -1,0 +1,95 @@
+//
+// Vars
+//
+$fs-extra: 100px;
+$fs-superjumbo: 80px;
+$fs-jumbo: 60px;
+$fs-extrabig: 52px;
+$fs-big: 45px;
+$fs-hero: 30px;
+$fs-large: 25px;
+$fs-heading: 22px;
+$fs-medium: 20px;
+$fs-standard: 18px;
+$fs-read: 16px;
+$fs-small: 14px;
+$fs-minor: 12px;
+$fs-x-small: 8.5px;
+//
+// Styles
+//
+
+.c-title {
+  font-size: $fs-hero;
+  line-height: $lh-easy;
+
+  @include respond-above(tb) {
+    &.c-title--jumbo {
+      font-size: $fs-jumbo;
+      line-height: 0.1 !important;
+    }
+
+    &.c-title--extrabig {
+      font-size: $fs-extrabig;
+    }
+
+    &.c-title--big {
+      font-size: $fs-big;
+    }
+
+    &.c-title--hero {
+      font-size: $fs-hero;
+    }
+
+    &.c-title--large {
+      font-size: $fs-large;
+    }
+
+    &.c-title--medium {
+      font-size: $fs-medium;
+    }
+
+    &.c-title--small {
+      font-size: $fs-heading;
+    }
+
+    &.c-title--minor {
+      font-size: $fs-read;
+    }
+  }
+  @include respond-below(tb) {
+    &.c-title--jumbo {
+      font-size: $fs-jumbo;
+      line-height: 0.1 !important;
+    }
+  }
+}
+
+.c-subtitle {
+  line-height: $lh-easy;
+}
+
+.e-subtitle-2 {
+  font-size: $fs-heading;
+}
+
+.e-subtitle-3 {
+  font-size: $fs-standard;
+}
+
+.e-subtitle-4 {
+  font-size: $fs-read;
+}
+
+.e-text {
+  font-size: $fs-read;
+  line-height: $lh-easy;
+}
+
+.e-card-subtitle-4 {
+  font-size: $fs-small;
+}
+
+.e-card-text {
+  font-size: $fs-small;
+}

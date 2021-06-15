@@ -1,0 +1,203 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.navcontainer {
+  //Esto es el burguer
+  .simbolo {
+    cursor: pointer;
+    display: block;
+    width: 30px;
+    height: 30px;
+    position: fixed;
+    z-index: 10;
+    top: 18px;
+    left: 18px;
+    transform: rotate(0deg);
+    transition: $transition;
+
+    @include respond-above(md) {
+      display: none;
+    }
+  }
+
+  @include respond-above(md) {
+    .e-nav {
+      &.--top {
+        @include display-flex();
+        @include align-items(center);
+        @include justify-content(space-between);
+
+        ul {
+          @include display-flex();
+          margin: $v-unit-l 0 $v-unit-l $v-unit-m;
+
+          li {
+            margin-right: $v-unit-l;
+
+            &#menu-item-101,
+            &#menu-item-144 {
+              display: none;
+            }
+
+            a {
+              display: block;
+              color: $brown;
+              font-family: $ff-secondary;
+              transition: $transition;
+              position: relative;
+              letter-spacing: 0.5px;
+              font-size: $fs-standard;
+              transform: translateY(-3px);
+
+              &::after {
+                content: "";
+                background: url(img/backgrounds/simbolo-grande.svg) no-repeat;
+                background-size: contain;
+                opacity: 100%;
+                width: $unit;
+                height: $unit;
+                position: absolute;
+                right: -7px;
+                top: -3px;
+              }
+
+              &:hover {
+                color: $lime;
+
+                &::after {
+                  opacity: 100%;
+                }
+              }
+            }
+          }
+        }
+
+        .e-search {
+          width: 250px;
+          height: 20px;
+          transition: $transition;
+          transform: translateY(-15px);
+
+          .search__input {
+            width: 100px;
+            border-bottom-color: $white;
+            @include border-brown;
+            border-radius: 30px;
+            padding: $v-unit-s;
+            background-color: $gradientgrey;
+            color: $brown;
+            font-family: $ff-main;
+            transition: width 0.5s;
+
+            &:focus {
+              width: 200px;
+            }
+          }
+
+          .search__lupa {
+            i.ico-lupa {
+              &::before {
+                color: $white !important;
+              }
+            }
+          }
+        }
+      }
+    }
+
+    &.noise {
+      &::after {
+        content: none;
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    overflow: hidden;
+    width: 90%;
+    height: 0vh;
+    transition: $transition;
+    margin-top: $v-unit-l;
+    position: fixed;
+    top: 67px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 7;
+
+    &::before {
+      content: "";
+      display: block;
+      width: 100%;
+      height: 100%;
+      background: url(img/backgrounds/noise-nav-new.jpg) repeat;
+      background-size: cover;
+      position: absolute;
+      z-index: 6;
+      border-radius: 0 0 30px 30px;
+    }
+
+    &.noise {
+      &::after {
+        border-radius: 0 0 55px 55px;
+        z-index: 6;
+        opacity: 0.8;
+      }
+    }
+
+    .e-nav {
+      &.--top {
+        overflow: hidden;
+        @include display-flex();
+        flex-direction: column;
+        padding: 30px 60px;
+        position: relative;
+        z-index: 7;
+        height: 100%;
+        border-radius: 0 0 30px 30px;
+        @include box-shadow($boxshadownormal);
+        @include border-brown;
+
+        ul {
+          flex: 0 80%;
+          @include display-flex();
+          flex-direction: column;
+
+          li {
+            flex: 0 30%;
+            @include display-flex();
+            justify-content: center;
+            align-items: center;
+
+            a {
+              color: $white;
+              font-family: $ff-secondary;
+              display: block;
+              padding: 0px 15px;
+              font-size: 45px;
+              text-align: center;
+              transition: $transition;
+            }
+          }
+        }
+
+        .e-search {
+          flex: 0 20%;
+
+          .widget_search {
+            form {
+              @include display-flex();
+              justify-content: center;
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+  }
+}

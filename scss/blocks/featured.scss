@@ -1,0 +1,157 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-featured {
+  height: calc(100vh - 5px);
+  border: 0.01px solid #ffffff00;
+  position: relative;
+  z-index: 4;
+  overflow: hidden;
+
+  &.noise {
+    &::after {
+      opacity: 0.8;
+    }
+  }
+
+  .simbolo {
+    &::after {
+      content: "";
+      background: url(img/backgrounds/simbolostarbrown.svg) no-repeat;
+      background-size: contain;
+      @include opacity(10%);
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      z-index: -2;
+      bottom: 0;
+      left: 100px;
+      margin: auto;
+
+      @include respond-above(sm) {
+        top: 0vh;
+      }
+
+      @include respond-below(sm) {
+        opacity: 0;
+        top: 0vh;
+      }
+    }
+  }
+
+  .arrow {
+    display: block;
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 9;
+    @include border-brown;
+    border-radius: 100%;
+    animation: arrow 3s infinite;
+    width: 40px;
+    height: 40px;
+    cursor: pointer;
+
+    &::before {
+      content: "";
+      display: block;
+      margin: 7px 0px 0px 3px;
+      opacity: 100%;
+      width: 27px;
+      height: 18px;
+      position: relative;
+      background-image: url(#{$img-backgrounds}/arrow-right.svg);
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: bottom;
+      transform: rotate(90deg);
+    }
+
+    @include respond-above(sm) {
+      bottom: -380px;
+    }
+    @include respond-below(sm) {
+      bottom: -470px;
+    }
+  }
+
+  @keyframes arrow {
+    0% {
+      top: 0px;
+    }
+    25% {
+      top: 50px;
+    }
+    75% {
+      top: 25px;
+    }
+    100% {
+      top: 50px;
+    }
+  }
+
+  .container {
+    padding-top: 25vh;
+    position: relative;
+    z-index: 0;
+  }
+
+  .c-title {
+    text-align: left;
+    line-height: 0 !important;
+
+    strong {
+      font-size: 56px;
+    }
+
+    @include respond-above(sm) {
+      width: 400px;
+    }
+
+    @include respond-below(sm) {
+      width: 400px;
+    }
+  }
+
+  .c-subtitle {
+    color: $brown;
+    font-weight: $fw-normal;
+    font-size: 18px;
+    margin: 0 auto;
+    letter-spacing: -0.5px;
+
+    @include respond-below(sm) {
+    }
+  }
+
+  .c-title,
+  .c-subtitle {
+    position: relative;
+    z-index: 5;
+    pointer-events: none;
+  }
+
+  @include respond-above(md) {
+    .c-title {
+      margin-left: 55%;
+    }
+
+    .c-subtitle {
+      margin-left: 60%;
+    }
+  }
+
+  @include respond-below(md) {
+    height: 100vh;
+
+    .c-subtitle {
+      padding: 0 $h-unit-m;
+    }
+  }
+}

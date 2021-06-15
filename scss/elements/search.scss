@@ -1,0 +1,110 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.e-search {
+  #searchform {
+    @include display-flex;
+    @include align-items(center);
+  }
+
+  .search__input {
+    width: 40px;
+    background: none !important;
+    color: $white;
+    border-bottom: 2px solid $white;
+    border-radius: 1px;
+    transition: width 0.5s;
+
+    &:focus {
+      width: 150px;
+      background: none !important;
+      color: $white;
+      font-size: $fs-read;
+    }
+  }
+
+  .search__lupa {
+    .ico-lupa:before {
+      .page-template-page-investigaciones &,
+      .blog &,
+      .page-template-page-personas &,
+      .single-post &,
+      .page-template-page-cursos &,
+      .archive & {
+        color: $darkest;
+      }
+
+      .single-curso & {
+        @include respond-above(md) {
+          color: $white;
+        }
+        @include respond-below(sm) {
+          color: $darkest;
+        }
+      }
+
+      .home & {
+        @include respond-above(md) {
+          color: $white;
+        }
+      }
+
+      .single-persona & {
+        color: $white;
+      }
+    }
+  }
+
+  .search__lupa:hover{
+    background: $primary;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+  }
+
+  .search__input {
+    .page-template-page-investigaciones &,
+    .blog &,
+    .page-template-page-personas &,
+    .single-post &,
+    .search &,
+    .page-template-page-cursos &,
+    .page-template-default &,
+    .page-template &,
+    .archive & {
+      border-bottom-color: $darkest;
+      &:focus {
+        color: $darkest;
+      }
+    }
+
+    .single-curso & {
+      @include respond-above(md) {
+        border-bottom-color: $white;
+        &:focus {
+          color: $white;
+        }
+      }
+      @include respond-below(sm) {
+        border-bottom-color: $darkest;
+        &:focus {
+          color: $darkest;
+        }
+      }
+    }
+
+    .home & {
+      @include respond-above(md) {
+        border-bottom-color: $white;
+        &:focus {
+          color: $white;
+        }
+      }
+    }
+  }
+}

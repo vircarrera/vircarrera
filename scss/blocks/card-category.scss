@@ -1,0 +1,30 @@
+// Vars
+
+//
+// Styles
+//
+
+.b-card {
+  .category & {
+    .card__title {
+      .c-title {
+        a {
+          color: $brown;
+        }
+      }
+
+      &.green,
+      &.brown {
+        .c-title {
+          a {
+            color: $white;
+          }
+        }
+      }
+
+      &:hover > figure {
+        opacity: 100%;
+      }
+    }
+  }
+}

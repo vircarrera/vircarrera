@@ -1,0 +1,15 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.c-aside {
+  &.--entries {
+    .c-subtitle {
+      margin-bottom: $v-unit-m;
+    }
+  }
+}

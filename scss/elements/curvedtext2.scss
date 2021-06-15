@@ -1,0 +1,30 @@
+.e-curved-text {
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: auto;
+  transition: $transition;
+  transform: rotate(-3deg);
+
+  .text {
+    fill: $brown;
+  }
+
+  @include respond-above(sm) {
+    width: 100%;
+    top: 100px;
+
+    .text {
+      font-size: 34px;
+    }
+  }
+
+  @include respond-below(sm) {
+    width: 80%;
+    top: 120px;
+
+    .text {
+      font-size: 50px;
+    }
+  }
+}

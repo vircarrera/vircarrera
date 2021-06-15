@@ -1,0 +1,27 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.e-photo {
+  margin: 0 auto;
+  display: block;
+  max-height: 400px;
+  overflow: hidden;
+  margin-top: -$v-unit-l;
+  margin-bottom: $v-unit-l;
+
+  img {
+    display: block;
+    margin: 0 auto;
+  }
+
+  @include respond-above(md) {
+    img {
+      transform: translateY(-20%);
+    }
+  }
+}

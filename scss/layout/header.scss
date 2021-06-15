@@ -1,0 +1,20 @@
+//
+// Vars
+//
+
+$headerHeight: 70px;
+
+//
+// Styles
+//
+
+.c-header {
+  border: 3px transparent white;
+  border-bottom: $border $brown;
+  background-color: $gradientgrey;
+  @include box-shadow($boxshadownormal);
+  height: $headerHeight;
+  position: fixed;
+  width: 100%;
+  z-index: 7;
+}

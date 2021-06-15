@@ -1,0 +1,106 @@
+//
+// Vars
+//
+$widthB-XS: 280px;
+$heightB-XS: 190px;
+
+//BLUE FILTER GRADIENT
+$filter: linear-gradient(
+  190deg,
+  rgba(42, 106, 249, 0) 0%,
+  rgba(42, 106, 249, 1) 75%,
+  rgba(42, 106, 249, 1) 100%
+);
+//
+// Styles
+//
+.b-little-card >.e-card-heading{
+  .figure::before{
+    opacity: 1;
+    @include transition(opacity 0.3s linear);
+  }
+  .e-subtitle-3{
+    @include transition(font-size 0.3s linear); 
+  }
+  .e-card-subtitle-4{
+    @include transition(font-size 0.3s linear); 
+  }
+}
+.b-little-card >.e-card-heading:hover{
+  .figure::before{
+    opacity: 0.7;
+  }
+}
+.b-little-card .e-subtitle-3:hover{
+    font-size: $fs-medium; 
+}
+.b-little-card  .e-card-subtitle-4:hover{
+  font-size: $fs-read;
+}
+
+
+.b-little-card {
+  border-radius: $br-thin;
+  overflow: hidden;
+  width: $widthB-XS;
+
+  box-shadow: $boxshadowcero;
+  transform: scale(1);
+  transition: $transitionshadow;
+
+  &:hover {
+    transform: scale(1.01);
+    box-shadow: $boxshadownormal;
+  }
+
+  .e-card-heading {
+    position: relative;
+
+    @include display-flex;
+    @include justify-content(center);
+    @include align-items(flex-end);
+    .figure {
+      height: $heightB-XS;
+      margin: 0;
+      @include display-flex;
+      @include align-items(center);
+      @include justify-content(center);
+      img {
+        object-fit: cover;
+        min-height: 100%;
+      }
+
+      &::before {
+        content: "";
+        position: absolute;
+        height: 100%;
+        width: 100%;
+        top: 0;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        background: $filter;
+      }
+    }
+    .e-title-author-min {
+      position: absolute;
+      padding: $v-unit $h-unit $v-unit $h-unit;
+      .e-subtitle-3 {
+        color: $white;
+        margin-bottom: $unit;
+        line-height: $lh-standard;
+      }
+      .e-card-subtitle-4 {
+        display: inline;
+        font-weight: $fw-normal;
+        margin-bottom: $v-unit;
+        a {
+          color: $white;
+        }
+      }
+      .e-card-text {
+        color: $white;
+      }
+    }
+  }
+}

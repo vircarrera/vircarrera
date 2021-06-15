@@ -1,0 +1,21 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-social{
+    @include flex(0,0,30%);
+    @include display-flex;
+    @include flex-direction-column;
+    @include justify-content(space-between); 
+    @include respond-between(sm,lg){
+        @include flex-direction-row;
+    }
+    @include respond-below(lg){
+        @include flex(0,0,100%);
+    }
+
+}

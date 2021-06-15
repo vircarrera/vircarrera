@@ -1,0 +1,40 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-filter {
+  * {
+    line-height: $lh-standard;
+  }
+
+  ul {
+    margin-bottom: $v-unit;
+
+    &:last-of-type {
+      margin-bottom: none;
+    }
+
+    li {
+      margin-bottom: $unit;
+      display: inline-block;
+
+      &:first-of-type {
+        margin-bottom: $v-unit-s;
+        padding-left: 0;
+      }
+
+      &:last-of-type {
+        margin-bottom: none;
+        display: none;
+      }
+    }
+  }
+}
+
+.e-filters {
+  margin-bottom: $v-unit-l;
+}

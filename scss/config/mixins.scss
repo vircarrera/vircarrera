@@ -1,0 +1,165 @@
+// Link
+
+@mixin touch-hover() {
+  .no-touchevents &:hover, // enhanced for no-touch
+      .no-touchevents &:focus {
+    // relay same styles to active for touch devices
+    @content;
+  }
+}
+
+// Animation
+
+@mixin animation($animation) {
+  animation: $animation;
+  -webkit-animation: $animation;
+  -moz-animation: $animation;
+  -o-animation: $animation;
+}
+
+@mixin transition($transition) {
+  -webkit-transition: $transition;
+  -moz-transition: $transition;
+  -ms-transition: $transition;
+  transition: $transition;
+}
+
+@mixin transition-delay($transition) {
+  -webkit-transition-delay: $transition;
+  -o-transition-delay: $transition;
+  transition-delay: $transition;
+}
+
+// Styling
+
+@mixin appearance($appearance) {
+  -webkit-appearance: $appearance;
+  -moz-appearance: $appearance;
+  -ms-appearance: $appearance;
+  appearance: $appearance;
+}
+
+@mixin border-radius($radius) {
+  -webkit-border-radius: $radius;
+  -moz-border-radius: $radius;
+  -ms-border-radius: $radius;
+  border-radius: $radius;
+}
+
+@mixin box-double-padding {
+  padding-top: $vertical-unit * 2;
+  padding-bottom: $vertical-unit * 2;
+}
+
+@mixin box-padding {
+  padding-top: $vertical-unit;
+  padding-bottom: $vertical-unit;
+}
+
+@mixin box-shadow($shadow) {
+  -webkit-box-shadow: $shadow;
+  -moz-box-shadow: $shadow;
+  box-shadow: $shadow;
+}
+
+@mixin box-sizing($sizing) {
+  -webkit-box-sizing: $sizing;
+  -moz-box-sizing: $sizing;
+  -ms-box-sizing: $sizing;
+  box-sizing: $sizing;
+}
+
+@mixin break-inside {
+  -webkit-column-break-inside: avoid;
+  page-break-inside: avoid;
+  break-inside: avoid;
+}
+
+@mixin column-count($column-count) {
+  -webkit-column-count: $column-count;
+  -moz-column-count: $column-count;
+  column-count: $column-count;
+}
+
+@mixin column-gap($column-gap) {
+  -webkit-column-gap: $column-gap;
+  -moz-column-gap: $column-gap;
+  column-gap: $column-gap;
+}
+
+@mixin cover {
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+}
+
+@mixin filter($filter-type, $filter-amount) {
+  -webkit-filter: $filter-type + unquote("(#{$filter-amount})");
+  -moz-filter: $filter-type + unquote("(#{$filter-amount})");
+  -ms-filter: $filter-type + unquote("(#{$filter-amount})");
+  -o-filter: $filter-type + unquote("(#{$filter-amount})");
+  filter: $filter-type + unquote("(#{$filter-amount})");
+}
+
+@mixin hideit {
+  visibility: hidden;
+  display: none;
+}
+
+@mixin send-away {
+  display: block;
+  text-indent: -9999px;
+}
+
+@mixin opacity($opacity) {
+  -webkit-opacity: $opacity;
+  -moz-opacity: $opacity;
+  -ms-opacity: $opacity;
+  opacity: $opacity;
+}
+
+@mixin placeholder {
+  &.placeholder {
+    @content;
+  }
+  &:-moz-placeholder {
+    @content;
+  }
+  &::-moz-placeholder {
+    @content;
+  }
+  &:-ms-input-placeholder {
+    @content;
+  }
+  &::-webkit-input-placeholder {
+    @content;
+  }
+}
+
+@mixin placeholder-color($color) {
+  &:-moz-placeholder {
+    color: $color;
+  }
+  &::-moz-placeholder {
+    color: $color;
+  }
+  &:-ms-input-placeholder {
+    color: $color;
+  }
+  &::-webkit-input-placeholder {
+    color: $color;
+  }
+}
+
+@mixin hr-color($variable) {
+  background-color: $variable;
+  border-color: $variable;
+  color: $variable;
+}
+
+@mixin border-brown {
+  border: 3px solid $brown;
+}

@@ -1,0 +1,25 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-follow {
+  ul {
+    @include display-flex();
+
+    @include respond-above(sm) {
+      li {
+        margin-right: $v-unit-l;
+      }
+    }
+
+    @include respond-below(sm) {
+      li {
+        margin-right: $v-unit-l;
+      }
+    }
+  }
+}

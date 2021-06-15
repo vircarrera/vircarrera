@@ -1,0 +1,218 @@
+// Vars
+
+$words-padding-top-desktop: $unit50;
+$words-padding-top-mobile: $v-unit-l;
+$words-padding-bottom-desktop: $unit100;
+$words-padding-bottom-mobile: $unit100;
+$heading-margin-top: 135px;
+$p-max-width: 600px;
+$figure-max-height-mobile: 250px;
+$cara-left-desktop: $unit100;
+$cara-top-desktop: -$unit80;
+$cara-left-mobile: $unit0;
+$cara-right-mobile: $unit0;
+$cara-width-height: 280px;
+$imagen-max-height-desktop: $unit200;
+$imagen-margin-top-desktop: 110px;
+
+//
+// Styles
+//
+
+.b-words {
+  position: relative;
+  z-index: 1;
+  overflow: hidden;
+
+  .simbolo {
+    &::after {
+      content: "";
+      background: url(img/backgrounds/simbolostarbrown.svg) no-repeat;
+      background-size: contain;
+      @include opacity(10%);
+      width: 300px;
+      height: 300px;
+      position: absolute;
+      z-index: -2;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+
+      @include respond-above(sm) {
+        top: 9vh;
+        right: 50px;
+      }
+
+      @include respond-below(sm) {
+        opacity: 0;
+      }
+    }
+  }
+  .container {
+    position: relative;
+    z-index: 2;
+    @include display-flex();
+    @include flex-wrap(wrap);
+  }
+
+  .e-heading {
+    @include flex(0, 0, $unit100p);
+    margin-bottom: $unit50;
+
+    .c-title {
+      font-weight: $fw-light;
+      text-align: center;
+    }
+  }
+
+  .e-content {
+    @include flex(0, 0, 59%);
+    font-size: $fs-standard;
+
+    .c-title {
+      color: $brown;
+      font-weight: $fw-light;
+      margin-bottom: $v-unit-s;
+    }
+
+    p {
+      &.first {
+        margin-bottom: $v-unit-l;
+      }
+    }
+
+    ul {
+      margin-bottom: $v-unit-l;
+
+      li {
+        line-height: $lh-read;
+        list-style-image: url(img/backgrounds/simbolo-listas.svg) !important;
+        list-style-position: inside;
+      }
+    }
+  }
+
+  .e-imagen {
+    @include flex(0, 0, 39%);
+    @include display-flex();
+    @include justify-content(center);
+    max-height: $imagen-max-height-desktop;
+    position: relative;
+
+    .cara {
+      display: block;
+      width: $cara-width-height;
+      height: $cara-width-height;
+      position: absolute;
+      top: $cara-top-desktop;
+      left: $cara-left-desktop;
+      z-index: 0;
+      @include border-brown;
+      @include box-shadow($boxshadownormal);
+      @include border-radius(50%);
+    }
+
+    .texto {
+      border-radius: 100%;
+      width: 350px;
+      height: 350px;
+      display: block;
+      position: absolute;
+      z-index: 1;
+      bottom: 0;
+      right: 0;
+      margin: auto;
+      background: url(img/backgrounds/letras-blanco.png) no-repeat;
+      background-size: contain;
+      transition: $transition;
+      animation: turntext 40s 0s linear infinite;
+    }
+
+    @keyframes turntext {
+      0% {
+        transform: rotate(0);
+      }
+      50% {
+        transform: rotate(-180deg);
+      }
+      100% {
+        transform: rotate(-360deg);
+      }
+    }
+  }
+
+  @include respond-above(lg) {
+    padding-top: $words-padding-top-desktop;
+    padding-bottom: $words-padding-bottom-desktop;
+
+    .container {
+      @include justify-content(space-between);
+
+      .c-title {
+        margin-top: $v-unit-l;
+      }
+    }
+
+    .e-imagen {
+      margin-top: $imagen-margin-top-desktop;
+      @include align-items(flex-end);
+
+      .texto {
+        top: -85px;
+        left: -20px;
+      }
+    }
+  }
+
+  @include respond-below(lg) {
+    padding-top: $words-padding-top-mobile;
+    padding-bottom: $words-padding-bottom-mobile;
+
+    .container {
+      flex-direction: column;
+
+      .e-heading,
+      .e-content,
+      figure {
+        @include flex(0, 0, $unit100p);
+      }
+
+      .e-heading {
+        order: 1;
+        margin-bottom: $heading-margin-top;
+
+        .c-title {
+          margin-top: $v-unit-s;
+        }
+      }
+
+      .e-content {
+        order: 3;
+
+        ul,
+        p {
+          transform: translateY($v-unit-l);
+        }
+      }
+
+      .e-imagen {
+        margin-bottom: 250px;
+        height: $figure-max-height-mobile;
+        order: 2;
+        @include align-items(flex-start);
+
+        .cara {
+          left: $cara-left-mobile;
+          right: $cara-right-mobile;
+          top: -80px;
+          margin: auto;
+        }
+
+        .texto {
+          top: 70px;
+          left: -5px;
+        }
+      }
+    }
+  }
+}

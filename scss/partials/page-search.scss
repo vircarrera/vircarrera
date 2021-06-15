@@ -1,0 +1,19 @@
+// VARS
+
+// STYLES
+
+.search {
+  .container.--main {
+    padding-top: $unit100;
+
+    .c-title {
+      margin-bottom: $v-unit-l;
+    }
+  }
+
+  &.search-no-results {
+    .container.--main {
+      min-height: 60vh;
+    }
+  }
+}

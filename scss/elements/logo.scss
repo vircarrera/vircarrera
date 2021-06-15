@@ -1,0 +1,27 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.e-logo {
+  color: $brown;
+  font-weight: 700;
+  display: inline-block;
+  width: 100px;
+  position: absolute;
+  z-index: 10;
+  left: 0;
+  right: 0;
+  top: 26px;
+  font-size: $fs-standard;
+  margin: auto;
+  transition: $transition;
+  text-align: center;
+
+  &:hover {
+    color: $lime;
+  }
+}

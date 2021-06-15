@@ -1,0 +1,146 @@
+// Vars
+
+$card-width-desktop: 460px;
+$card-margin-right-desktop: $unit50;
+$card-padding-bottom-desktop: 75px;
+$card-familia-padding-bottom-desktop: 30px;
+$card-min-height-desktop: 430px;
+$card-familia-min-height-desktop: 0px;
+$title-description-extra-padding: 25px;
+$card-favorite-width-height: 40px;
+$card-favorite-top-right: $v-unit;
+$card-link-right-desktop: $v-unit-l;
+$card-link-bottom: $v-unit-l;
+
+//
+// Styles
+//
+
+.b-card {
+  position: relative;
+  z-index: 0;
+  border: 4px solid $brown;
+  width: $card-width-desktop;
+  @include border-radius(20px);
+  @include box-shadow($boxshadownormal);
+  margin-right: $card-margin-right-desktop;
+  padding-bottom: $card-padding-bottom-desktop;
+  transition: $transition;
+  background-color: $gradientgrey;
+
+  figure {
+    @include opacity(0%);
+    display: block;
+    position: absolute;
+    width: 300px;
+    height: 200px;
+    transform: translate(-105%, -125%);
+    transition: $transition;
+    pointer-events: none;
+
+    img {
+      min-width: 100%;
+      width: 100px;
+      max-height: 220px;
+      object-fit: cover;
+    }
+  }
+
+  .card__title {
+    @include border-radius(16px 16px 0 0);
+    border-bottom: $border $brown;
+    text-transform: uppercase;
+    display: block;
+
+    &.green,
+    &.brown,
+    &.diseno-web,
+    &.gestion-cultural,
+    &.diseno-grafico {
+      .c-title {
+        color: $white;
+      }
+    }
+
+    &.noise {
+      z-index: 0;
+      overflow: hidden;
+      border-radius: 15px 15px 0 0;
+    }
+
+    &.brown.noise,
+    &.green.noise {
+      &::after {
+        @include opacity(0.5);
+      }
+    }
+  }
+
+  .c-title,
+  .card__description,
+  .card__extra {
+    padding: $title-description-extra-padding;
+  }
+
+  .c-title,
+  .e-text {
+    color: $brown;
+  }
+
+  .c-title {
+    position: relative;
+    z-index: 1;
+  }
+
+  .card__description {
+    border-bottom: $border $brown;
+  }
+
+  .card__extra {
+    &.favorite {
+      &::before {
+        content: "";
+        background: url(img/backgrounds/heart.svg) no-repeat;
+        background-size: contain;
+        width: $card-favorite-width-height;
+        height: $card-favorite-width-height;
+        position: absolute;
+        top: $card-favorite-top-right;
+        right: $card-favorite-top-right;
+      }
+    }
+
+    .card_tags {
+      .e-tag {
+        background-color: $brown;
+      }
+    }
+  }
+
+  .card__link {
+    position: absolute;
+    z-index: 1;
+    display: inline-block;
+    bottom: $card-link-bottom;
+  }
+
+  @include respond-above(sm) {
+    min-height: $card-min-height-desktop;
+
+    &.familia {
+      min-height: $card-familia-min-height-desktop !important;
+    }
+
+    .card__link {
+      right: $card-link-right-desktop;
+    }
+  }
+
+  @include respond-below(sm) {
+    .card__link {
+      a {
+        display: block;
+      }
+    }
+  }
+}

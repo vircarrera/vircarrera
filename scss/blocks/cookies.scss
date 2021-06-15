@@ -1,0 +1,25 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.cc_container .cc_btn,
+.cc_container .cc_btn:visited {
+  @include border-brown;
+  background-color: $white !important;
+  color: $brown !important;
+  border-radius: 50px !important;
+}
+.cc_container a,
+.cc_container a:visited {
+  color: $lime !important;
+}
+
+.cc_container {
+  background: #fff !important;
+  color: $brown !important;
+  border-top: $border $brown !important;
+}

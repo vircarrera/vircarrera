@@ -1,0 +1,298 @@
+//
+// Vars
+//
+
+$padding-footer: $v-unit-l; //Padding del footer, utilizado para desplazar el fondo
+
+//
+// Styles
+//
+
+//Aquí están las clases con un comportamiento genérico
+
+//Noise usados
+
+.noise {
+  position: relative;
+
+  &::after {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    mix-blend-mode: soft-light;
+    background-size: contain;
+    position: absolute;
+    top: 0;
+    z-index: -1;
+    background: url(img/backgrounds/noise.jpeg) repeat;
+  }
+}
+
+.noise-featured {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    position: absolute;
+    z-index: -3;
+
+    @include respond-above(sm) {
+      background-attachment: fixed;
+    }
+
+    @include respond-above(xs) {
+      background: url(img/backgrounds/noise-featured-desktop.jpg) no-repeat;
+      background-size: cover;
+    }
+
+    @include respond-below(xs) {
+      background: url(img/backgrounds/noise-featured-mobile.png) no-repeat;
+      background-size: cover;
+    }
+  }
+
+  &::after {
+    height: 100vh;
+  }
+}
+
+.noise-words {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: bottom;
+    position: absolute;
+    z-index: -1;
+    transform: translateY(-$v-unit-l);
+
+    @include respond-above(md) {
+      background: url(img/backgrounds/noise-words.png) no-repeat;
+      background-attachment: fixed;
+      background-size: cover;
+    }
+
+    @include respond-below(md) {
+      background: url(img/backgrounds/noise-words-mobile.png) no-repeat;
+      background-position: right;
+      background-size: cover;
+    }
+  }
+
+  &::after {
+    @include respond-above(sm) {
+      transform: translateY(20px);
+    }
+  }
+}
+
+.noise-footer {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100vh;
+    background-size: cover;
+    position: absolute;
+    z-index: -3;
+    transform: translateY(-$padding-footer);
+
+    @include respond-above(sm) {
+      background-attachment: fixed;
+      background-size: cover !important;
+      background: url(img/backgrounds/noise-footer-desktop.jpg) no-repeat;
+    }
+    @include respond-below(sm) {
+      background: url(img/backgrounds/noise-featured-footer.jpeg) no-repeat;
+      background-position: top;
+    }
+  }
+
+  &::after {
+    height: 100vh;
+  }
+}
+
+//Clases de texto
+
+.tachado {
+  position: relative;
+
+  &::before {
+    content: "";
+    position: absolute;
+    width: 100%;
+    height: 3px;
+    @include border-radius(2px);
+    left: 0;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    margin: auto;
+    transform: rotate(-5deg);
+    background-color: $brown;
+    z-index: 5;
+  }
+}
+
+.redondeado {
+  border: $border $brown;
+  padding: 20px 0px;
+  border-radius: 30px;
+}
+
+.subrayado {
+  border-bottom: $border $brown;
+  padding: 1px 5px;
+}
+
+.corazon {
+  position: relative;
+  color: transparent;
+
+  &::before {
+    content: "";
+    background: url(img/backgrounds/heart-alone.svg) no-repeat;
+    background-size: contain;
+    width: 40px;
+    height: 40px;
+    position: absolute;
+    top: -10px;
+    left: -10px;
+  }
+}
+
+//Clases de color
+
+.pink {
+  background-color: $pink;
+}
+
+.red-text {
+  color: $red;
+}
+
+.lime-text {
+  @include respond-above(sm) {
+    color: $green;
+  }
+
+  @include respond-below(sm) {
+    color: $green;
+  }
+}
+
+.lime,
+.diseno-web {
+  background-color: $lime;
+}
+
+.green,
+.diseno-grafico {
+  background-color: $green;
+}
+
+.red,
+.desarrollo-web {
+  background-color: $pink;
+}
+
+.brown,
+.gestion-cultural {
+  background-color: $brown;
+}
+
+.blue,
+.identidad-de-marca {
+  background-color: $blue;
+}
+
+//Noise de color
+
+.green-noise {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(img/backgrounds/green-noise.png) repeat;
+    background-size: auto;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.lime-noise {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(img/backgrounds/lime-noise.png) repeat;
+    transform: translateY(-30px);
+    background-size: auto;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.white-noise {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(img/backgrounds/white-noise.png) repeat;
+    background-size: contain;
+    position: absolute;
+    z-index: -1;
+    transform: translateY(-100px);
+  }
+}
+
+.pink-noise {
+  &::before {
+    content: "";
+    display: block;
+    width: 100%;
+    height: 100%;
+    background: url(img/backgrounds/pink-noise.png) repeat;
+    background-size: contain;
+    position: absolute;
+    z-index: -1;
+  }
+}
+
+.simbolorepetido {
+  @include respond-below(sm) {
+    display: none;
+  }
+
+  &::after {
+    content: "";
+    background: url(img/backgrounds/simbolostarbrown.svg) repeat;
+    background-size: 130px;
+    mix-blend-mode: soft-light;
+    @include opacity(5%);
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 2;
+
+    @include respond-above(sm) {
+      top: 35px;
+    }
+    @include respond-below(sm) {
+      top: 0px;
+    }
+  }
+}

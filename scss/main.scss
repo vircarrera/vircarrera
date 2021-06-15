@@ -1,0 +1,70 @@
+//
+// Vendor
+//
+@import "vendor/reset";
+
+// // Config
+
+@import "config/mixins";
+@import "config/mixins-flex";
+@import "config/mixins-transform";
+@import "config/breakpoints";
+@import "config/basic";
+@import "config/behaviours";
+
+// // Elements
+
+// @import "elements/burger";
+@import "elements/back";
+@import "elements/check";
+@import "elements/cta";
+@import "elements/curvedtext";
+@import "elements/date";
+@import "elements/location";
+@import "elements/logo";
+@import "elements/photo";
+// @import "elements/menu";
+// @import "elements/menu-bottom";
+// @import "elements/menu-legal";
+// @import "elements/menu-redes";
+// @import "elements/pagination";
+// @import "elements/search";
+@import "elements/redes";
+@import "elements/tag";
+@import "elements/time";
+@import "elements/titles";
+// @import "elements/video";
+
+// // Blocks
+
+// @import "blocks/article";
+@import "blocks/card";
+@import "blocks/card-category";
+@import "blocks/contact";
+@import "blocks/cookies";
+@import "blocks/featured-blog-post";
+@import "blocks/featured";
+@import "blocks/filter";
+@import "blocks/follow";
+@import "blocks/footer-menu";
+@import "blocks/pager";
+@import "blocks/related";
+@import "blocks/words";
+
+// // // Layout
+
+@import "layout/aside";
+@import "layout/content";
+@import "layout/footer";
+@import "layout/header";
+@import "layout/layout";
+@import "layout/nav";
+
+// //  // Partials
+
+@import "partials/fonts";
+@import "partials/index";
+@import "partials/page-search";
+@import "partials/page-template";
+@import "partials/single";
+// @import "partials/404";

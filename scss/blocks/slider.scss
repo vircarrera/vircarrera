@@ -1,0 +1,303 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-slider {
+  padding-top: $h-unit-xxxl;
+  position: relative;
+  z-index: 10;
+
+  .e-slider {
+    position: absolute;
+    top: 49px;
+    left: 0;
+    right: 0;
+    height: 100vh;
+    margin: 0 auto;
+
+    &::before {
+      content: "";
+      position: absolute;
+      z-index: 11;
+      left: 0;
+      right: 0;
+      top: -5px;
+      height: 200px;
+      background: $gradientHeader;
+      display: block;
+    }
+
+    .e-slide {
+      width: 100%;
+      height: 100%;
+
+      &::before {
+        content: "";
+        position: absolute;
+        z-index: 1;
+        display: block;
+        width: 100%;
+        top: -150px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url(#{$img-backgrounds}/fondoazul-curso.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+        opacity: 0;
+      }
+
+      &::after {
+        content: "";
+        position: absolute;
+        z-index: 2;
+        display: block;
+        width: 100%;
+        top: -150px;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        background-image: url(#{$img-backgrounds}/fondoazul-nuevo.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+      }
+
+      .e-image {
+        position: absolute;
+        z-index: -1;
+        top: -1px;
+        bottom: 0;
+        left: 0;
+        right: 0;
+        height: 88%;
+
+        img {
+          position: absolute;
+          z-index: 1;
+          top: 50%;
+          left: 50%;
+          min-width: 100%;
+          min-height: 100%;
+          transform: translate(-50%, -50%);
+          object-fit: cover;
+        }
+      }
+
+      .w-1310 {
+        margin-top: 200px;
+
+        .c-title,
+        .c-subtitle {
+          color: $white;
+        }
+
+        .c-title,
+        .c-subtitle,
+        .cta {
+          position: relative;
+          z-index: 13;
+        }
+      }
+    }
+  }
+
+  .flickity-page-dots {
+    bottom: 50px;
+  }
+
+  .flickity-prev-next-button {
+    opacity: 0;
+  }
+
+  @include respond-between(lg, xl) {
+    .e-slide {
+      .w-1310 {
+        @include display-flex();
+        @include flex-direction-column();
+        @include align-items(center);
+      }
+    }
+  }
+
+  @include respond-above(md) {
+    @include display-flex();
+    @include flex-direction-column();
+    @include justify-content(center);
+    @include align-items(flex-start);
+    height: 102vh;
+
+    &::before {
+      background-image: url(#{$img-backgrounds}/fondoazul-curso.svg);
+    }
+    .c-title.e-title-banner {
+      margin-bottom: 15px;
+      text-align: left;
+    }
+    .c-subtitle {
+      margin-bottom: 30px;
+    }
+    .e-slider {
+      .e-slide {
+        .e-image {
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 109%,
+            82% 104%,
+            65% 91%,
+            40% 95%,
+            35% 92%,
+            0 100%
+          );
+          -webkit-clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 109%,
+            82% 104%,
+            65% 91%,
+            40% 95%,
+            35% 92%,
+            0 100%
+          );
+        }
+      }
+    }
+  }
+
+  @include respond-between(sm, md) {
+    height: 60vh;
+
+    .flickity-page-dots {
+      bottom: 50px;
+    }
+
+    .e-slider {
+      height: 60vh;
+
+      .e-image {
+        height: 48%;
+        clip-path: polygon(
+          0 0,
+          100% 0,
+          100% 109%,
+          88% 104%,
+          65% 91%,
+          40% 95%,
+          14% 94%,
+          0 100%
+        );
+        -webkit-clip-path: polygon(
+          0 0,
+          100% 0,
+          100% 109%,
+          88% 104%,
+          65% 91%,
+          40% 95%,
+          14% 94%,
+          0 100%
+        );
+      }
+
+      &::before,
+      &::after {
+        height: 70%;
+      }
+    }
+  }
+
+  @include respond-below(sm) {
+    @include display-flex();
+    @include flex-direction-column();
+    @include justify-content(flex-end);
+    @include align-items(flex-start);
+    padding: 170px 15px 30px;
+    height: 63vh;
+
+    .c-title,
+    .c-subtitle {
+      margin-bottom: 15px;
+    }
+
+    .flickity-page-dots {
+      bottom: 50px;
+    }
+
+    .e-slider {
+      height: calc(80vh - 49px);
+
+      .e-slide {
+        .e-image {
+          height: 85% !important;
+          clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 109%,
+            87% 101%,
+            67% 92%,
+            40% 95%,
+            14% 98%,
+            0 98%
+          );
+          -webkit-clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 109%,
+            87% 101%,
+            67% 92%,
+            40% 95%,
+            14% 98%,
+            0 98%
+          );
+        }
+      }
+
+      &::before,
+      &::after {
+        height: 70%;
+      }
+
+      .w-1310 {
+        margin-top: 130px !important;
+      }
+    }
+  }
+
+  @include respond-below(xs) {
+    height: 80vh;
+
+    .e-slider {
+      height: calc(90vh - 65px);
+
+      .e-slide {
+        .e-image {
+          height: 90% !important;
+          clip-path: polygon(0 0, 100% 0, 100% 100%, 0% 0%, 100% 100%, 0 100%);
+          -webkit-clip-path: polygon(
+            0 0,
+            100% 0,
+            100% 100%,
+            0% 0%,
+            100% 100%,
+            0 100%
+          );
+        }
+
+        &::after {
+          top: 130px !important;
+        }
+      }
+    }
+  }
+
+  @include respond-below(xxs) {
+    .e-slider {
+      height: calc(100vh - 65px);
+    }
+  }
+}

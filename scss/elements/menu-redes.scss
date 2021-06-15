@@ -1,0 +1,28 @@
+//
+// Vars
+//
+
+$marginIcon: 20px;
+$fs: 28px;
+
+//
+// Styles
+//
+
+.e-menu__redes {
+  @include display-flex;
+
+  .menu-item {
+    margin-right: $marginIcon;
+
+    a {
+      color: $lily-light;
+      font-size: $fs-large;
+      @include transition(all 0.3s linear);
+    }
+    a:hover{
+      color: $white;
+      font-size: $fs;
+    }
+  }
+}

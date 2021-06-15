@@ -1,0 +1,50 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.e-menu__legal{
+    @include display-flex;
+    @include flex-wrap(wrap);
+    .menu-item{
+        @include respond-below(sm){
+            @include flex(0,0,100%); 
+            margin-bottom:$v-unit-s;
+            text-align: center;
+        }
+        a{
+            color: $lily-light;
+            font-size: $fs-small;
+            @include transition(color 0.3s linear);
+            @include respond-between(sm,lg){
+                margin-right: $h-unit;
+            }
+        }
+        a:hover{
+            color: $white;   
+        }
+    }
+
+    .menu-item:last-child{
+        a{
+            @include respond-between(sm,lg){
+                margin-right: 0;  
+            }          
+        }
+    }  
+
+    @include respond-below(lg){
+        @include flex(0,0,100%);   
+        @include justify-content(center); 
+    }
+
+    @include respond-above(lg){
+        @include flex(0,0,60%);
+        @include justify-content(space-between);
+        text-align: end;
+    }
+
+}

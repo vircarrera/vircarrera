@@ -1,0 +1,68 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-menutop,
+.b-menulegal,
+.b-menuredes {
+  margin-bottom: $v-unit-m;
+
+  ul {
+    @include display-flex();
+
+    li {
+      margin-bottom: $v-unit-m;
+      font-size: $fs-heading;
+      font-family: $ff-secondary;
+
+      a {
+        color: $brown;
+
+        &:hover {
+          color: $green;
+        }
+      }
+    }
+  }
+}
+
+.b-menutop,
+.b-menulegal {
+  @include flex(0, 0, 45%);
+
+  ul {
+    @include flex-direction-column();
+  }
+}
+
+.b-menulegal {
+  ul {
+    @include align-items(flex-end);
+  }
+}
+
+.b-menuredes {
+  @include flex(0, 0, 100%);
+
+  ul {
+    @include align-items(center);
+    @include justify-content(center);
+
+    li {
+      margin: 0 $v-unit-s;
+    }
+  }
+}
+
+@include respond-below(sm) {
+  .b-menutop,
+  .b-menulegal {
+    ul {
+      @include align-items(center);
+    }
+  }
+}

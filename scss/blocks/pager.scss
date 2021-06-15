@@ -1,0 +1,115 @@
+/*
+-
+VARS
+-
+*/
+$paddingA: 16px;
+/*
+-
+STYLES
+-
+*/
+.b-pager {
+  @include display-flex;
+  @include justify-content(center);
+  margin-top: $v-unit-m;
+
+  .wrapper {
+    @include display-flex;
+
+    .e-numbers {
+      @include display-flex;
+      @include justify-content(space-between);
+
+      .page-numbers {
+        font-size: $fs-standard;
+        display: block;
+        margin: $v-unit-s;
+        border-radius: $br-thin;
+        color: $brown;
+        background-color: $white;
+        @include display-flex;
+        @include align-items(center);
+        padding: $paddingA $h-unit-m;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      }
+
+      .page-numbers.prev,
+      .page-numbers.next {
+        padding: $v-unit;
+        font-size: $fs-medium;
+        color: $blue;
+        transition: color 0.3s ease-in-out, transform 0.3s ease-in-out;
+      }
+
+      .current {
+        font-size: $fs-standard;
+        color: $green;
+        display: block;
+        margin: $v-unit-s;
+        padding: $paddingA $h-unit-m;
+        border-radius: $br-thin;
+        @include display-flex;
+        @include align-items(center);
+        border: 2px solid transparent;
+      }
+
+      .dots {
+        @include display-flex;
+        @include align-items(center);
+        color: $brown;
+        padding: $v-unit-s;
+      }
+
+      a:hover {
+        color: $lime;
+      }
+
+      .prev:hover {
+        .ico-flecha-izq:before {
+          color: $lime;
+        }
+      }
+
+      .next:hover {
+        .ico-flecha-der:before {
+          color: $lime;
+        }
+      }
+    }
+  }
+
+  @include respond-below(sm) {
+    .wrapper {
+      .e-numbers {
+        margin: 0;
+        background-color: $white;
+        border-radius: $br-thin;
+        @include display-flex;
+        @include justify-content(space-between);
+        @include flex-wrap(wrap);
+        .page-numbers {
+          background-color: transparent;
+        }
+        .page-numbers.prev {
+          order: 1;
+          margin-bottom: $v-unit-s;
+        }
+        .page-numbers.next {
+          order: 2;
+          margin-bottom: $v-unit-s;
+        }
+        .dots {
+          padding: 0;
+          margin: 0;
+        }
+        .current {
+          padding: 0;
+          background-color: transparent;
+          font-weight: $fw-bold;
+          //color: $pink;
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+@mixin flex-center {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+}
+
+@mixin flex-between {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: space-between;
+  -ms-flex-pack: space-between;
+  justify-content: space-between;
+}
+
+@mixin display-flex {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@mixin align-items($variable) {
+  -webkit-box-align: $variable;
+  -ms-flex-align: $variable;
+  align-items: $variable;
+}
+
+@mixin flex-wrap($variable) {
+  -ms-flex-wrap: $variable;
+  flex-wrap: $variable;
+}
+
+@mixin flex-direction-row {
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: row;
+  flex-direction: row;
+}
+
+@mixin flex-direction-column {
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+  -ms-flex-direction: column;
+  flex-direction: column;
+}
+
+@mixin justify-content($varible) {
+  -webkit-box-pack: $varible;
+  -ms-flex-pack: $varible;
+  justify-content: $varible;
+}
+
+@mixin flex-grow($variable) {
+  -webkit-box-flex: $variable;
+  -ms-flex-positive: $variable;
+  flex-grow: $variable;
+}
+
+@mixin flex-order($variable) {
+  -webkit-box-ordinal-group: $variable;
+  -ms-flex-order: $variable;
+  order: $variable;
+}
+
+@mixin flex($varible1, $variable2, $variable3) {
+  -webkit-box-flex: $varible1;
+  -ms-flex: $varible1 $variable2 $variable3;
+  flex: $varible1 $variable2 $variable3;
+}

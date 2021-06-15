@@ -1,0 +1,161 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.e-menu {
+  @include display-flex;
+  @include align-items(center);
+
+  .page-template-page-investigaciones &,
+  .page-template-page-personas &,
+  .page-template-page-cursos &,
+  .page-template-default &,
+  .page-template &,
+  .blog &,
+  .single-post &{
+    @include respond-above(md) {
+      &.--top,
+      &.--redes {
+        li a {
+          color: $darkest;
+        }
+      }
+    }
+  }
+
+  .home &,
+  .single-persona &,
+  .single-curso & {
+    @include respond-above(md) {
+      &.--top,
+      &.--redes {
+        li a {
+          color: $white;
+        }
+      }
+    }
+  }
+
+  .current-menu-item {
+    font-weight: $fw-bold;
+  }
+
+  @include respond-above(md) {
+    li {
+      padding-bottom: $v-unit-xs;
+    }
+
+    &.--top,
+    &.--redes {
+      li {
+        a {
+          color: $darkest;
+        }
+      }
+    }
+
+    &.--top {
+      li {
+        margin-right: $h-unit-l;
+      }
+
+      .current-menu-item {
+        position: relative;
+
+        &:after {
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -3px;
+          left: -4%;
+          width: 110%;
+          height: 3px;
+          border-radius: 1px;
+          background: $primary;
+        }
+      }
+
+      .menu-item {
+        position: relative;
+        a {
+          transition: font-size 0.3s linear;
+        }
+        a:after{
+          content: "";
+          display: block;
+          position: absolute;
+          bottom: -3px;
+          left: -4%;
+          width: 0;
+          height: 3px;
+          border-radius: 1px;
+          background: $primary;
+          transition: width 0.3s linear;
+        }
+        a:hover {
+          font-size: 16px;
+          &:after {
+            width: 110%;
+          }
+        }
+      }
+    }
+
+    &.--redes {
+      li {
+        margin-right: $h-unit;
+        a{
+          transition: font-size 0.3s linear,color 0.3s linear;
+        }
+        a:hover{
+          font-size: 20px;
+          color: $lily-light;
+        }
+      }
+    }
+  }
+
+  @include respond-below(md) {
+    &.--top {
+      @include flex-direction-column;
+
+      li {
+        a {
+          display: block;
+          text-align: center;
+          width: 80vw;
+          color: $white;
+          font-size: 30px;
+          margin-bottom: 70px;
+        }
+      }
+    }
+
+    &.--redes {
+      li {
+        a {
+          color: $darkest;
+          margin-right: $h-unit-l;
+          font-size: $fs-medium;
+        }
+      }
+    }
+  }
+
+  @include respond-below(sm) {
+    &.--top {
+      padding-top: 120px;
+
+      li {
+        a {
+          font-size: 20px;
+          margin-bottom: 35px;
+        }
+      }
+    }
+  }
+}

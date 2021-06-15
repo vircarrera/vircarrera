@@ -1,0 +1,320 @@
+/*
+	*
+	* Colours
+	*
+*/
+
+// Paleta destacados
+
+$red: #d11732;
+$brown: #654a4e;
+$brown: #181e53d2;
+$pink: #e6ddde;
+$green: #3c8b3b;
+$lime: #c2d117;
+$blue: #cce8e5;
+$white: white;
+
+// degradado
+
+$gradientgrey: rgba(239, 239, 239, 0.3);
+
+// messages
+$success: #26c281;
+$info: #22a7f0;
+$warning: #f39c12;
+$danger: #ef4836;
+
+// text shadow
+
+$ts-grey: 1px 1px 5px #3a3a3a8a;
+
+// Transition
+
+$ts-fast: 0.3s;
+$ts-soft: 0.6s;
+$transition: all 0.3s;
+
+// box shadow
+
+$boxshadowcero: 0 0px 0px rgba(0, 0, 0, 0);
+$boxshadowsoft: 3px 3px 5px 0px rgba(0, 0, 0, 0.1);
+$boxshadownormal: 3px 3px 5px 0px rgba(0, 0, 0, 0.2);
+$boxshadowhover: 0 4.5px 4.5px rgba(70, 70, 70, 0.4);
+
+// gradients
+
+/*
+-
+Font Families
+-
+*/
+
+$ff-main: "Fira Sans", sans-serif;
+$ff-secondary: "Canela", serif;
+
+.serif {
+  font-family: $ff-secondary;
+  letter-spacing: 1px;
+}
+
+/*
+-
+Font Sizes
+-
+*/
+
+$fs-extra: 100px;
+$fs-superjumbo: 80px;
+$fs-jumbo: 60px;
+$fs-extrabig: 52px;
+$fs-big: 45px;
+$fs-hero: 30px;
+$fs-large: 25px;
+$fs-heading: 22px;
+$fs-medium: 20px;
+$fs-standard: 18px;
+$fs-read: 16px;
+$fs-small: 14px;
+$fs-minor: 12px;
+$fs-x-small: 8.5px;
+
+$unit200: 200px;
+$unit100p: 100%;
+$unit100: 100px;
+$unit80: 80px;
+$unit50: 50px;
+$unit0: 0px;
+
+$v-unit-xs: 5px;
+$unit: 7.5px;
+$v-unit-s: 10px;
+$v-unit: 15px;
+$v-unit-m: 20px;
+$v-unit-l: 30px;
+$v-unit-xl: 60px;
+$v-unit-xxl: 90px;
+$v-unit-xxxl: 120px;
+
+$h-unit-xs: 7.5px;
+$h-unit: 15px;
+$h-unit-m: 20px;
+$h-unit-l: 30px;
+$h-unit-xl: 60px;
+$h-unit-xxl: 90px;
+$h-unit-xxxl: 120px;
+
+$lh-extra: 2;
+$lh-big: 1.75;
+$lh-read: 1.6667;
+$lh-easy: 1.4;
+$lh-standard: 1.33333;
+$lh-normal: 1.2;
+$lh-small: 1.166667;
+$lh-reset: 1;
+$lh-zero: 0;
+
+// border
+
+$border: 3px solid;
+$bs-double: 2px solid;
+
+/*
+-
+Font Weights
+-
+*/
+
+$fw-black: 800;
+$fw-bold: 700;
+$fw-medium: 600;
+$fw-premedium: 500;
+$fw-normal: 400;
+$fw-light: 300;
+$fw-lighter: 100;
+
+/*
+-
+Font Styles
+-
+*/
+
+$fs-italic: italic;
+
+/*
+-
+Border Radius
+-
+*/
+
+$br-big: 25px;
+$br-thin: 7px;
+
+img {
+  height: auto;
+  max-width: 100%;
+}
+
+/*
+-
+Others
+-
+*/
+
+$img-bg: "img/backgrounds/";
+$img-content: "img/content/";
+$img-backgrounds: "img/backgrounds/";
+
+$border-style: 1px solid;
+$border-double: 2px solid;
+$sleeve-scale-hover: 1.01;
+
+/*
+-
+Reset
+-
+*/
+
+* {
+  box-sizing: border-box;
+  line-height: $lh-reset;
+}
+
+body {
+  font-family: $ff-main;
+  font-size: $fs-read;
+  background: white;
+  position: relative;
+  color: $brown;
+}
+
+a,
+input,
+textarea,
+button,
+button:focus,
+select {
+  border: 0;
+  outline: none !important;
+}
+
+button {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+}
+
+p {
+  line-height: $lh-standard;
+}
+
+a {
+  text-decoration: none;
+
+  &:link,
+  &:visited {
+    // color: black;
+    cursor: pointer;
+    text-decoration: none;
+  }
+
+  &:hover {
+    text-decoration: none;
+  }
+}
+
+em {
+  font-style: $fs-italic;
+}
+
+strong {
+  font-weight: $fw-bold;
+
+  em {
+    font-weight: $fw-bold;
+    font-style: $fs-italic;
+  }
+}
+
+.grecaptcha-badge {
+  visibility: hidden;
+  opacity: 0 !important; /* no usar display none */
+}
+
+.page-template-page-contacto .grecaptcha-badge {
+  opacity: 1 !important;
+}
+
+figcaption {
+  display: block;
+  line-height: $lh-small;
+  font-size: $fs-minor;
+  padding-top: $unit;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p {
+  font-weight: normal;
+  font-size: inherit;
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+@font-face {
+  font-family: "vircarreraiconos";
+  src: url("fonts/vircarreraiconos.eot?3f24kq");
+  src: url("fonts/vircarreraiconos.eot?3f24kq#iefix")
+      format("embedded-opentype"),
+    url("fonts/vircarreraiconos.ttf?3f24kq") format("truetype"),
+    url("fonts/vircarreraiconos.woff?3f24kq") format("woff"),
+    url("fonts/vircarreraiconos.svg?3f24kq#vircarreraiconos") format("svg");
+  font-weight: normal;
+  font-style: normal;
+  font-display: block;
+}
+
+.iconos {
+  /* use !important to prevent issues with browser extensions that change fonts */
+  font-family: "vircarreraiconos" !important;
+  font-style: normal;
+  font-weight: normal;
+  font-variant: normal;
+  text-transform: none;
+  line-height: 1;
+
+  /* Better Font Rendering =========== */
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.ico-Lupa:before {
+  content: "\e900";
+  color: $brown;
+}
+.ico-time:before {
+  content: "\e903";
+}
+.ico-linkedin:before {
+  content: "\e901";
+}
+.ico-instagram:before {
+  content: "\e902";
+}

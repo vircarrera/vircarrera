@@ -1,0 +1,98 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.b-related {
+  margin-bottom: $v-unit-xl !important;
+
+  /* no circle */
+  .flickity-button {
+    background-color: $gradientgrey;
+    @include border-brown;
+    @include box-shadow($boxshadowsoft);
+
+    &:hover {
+      background: rgba($lime, 0.501);
+    }
+  }
+  /* big previous & next buttons */
+  .flickity-prev-next-button {
+    &.previous,
+    &.next {
+      z-index: 6;
+    }
+
+    &.previous {
+      &::before {
+        content: "";
+        display: block;
+        opacity: 100%;
+        width: 30px;
+        height: 20px;
+        background-image: url(#{$img-backgrounds}/arrow-left.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+      }
+    }
+
+    &.next {
+      &::before {
+        content: "";
+        display: block;
+        opacity: 100%;
+        width: 30px;
+        height: 20px;
+        background-image: url(#{$img-backgrounds}/arrow-right.svg);
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-position: bottom;
+      }
+    }
+  }
+
+  .flickity-prev-next-button .arrow {
+    fill: rgba(255, 255, 255, 0);
+  }
+
+  /* icon color */
+  .flickity-button-icon {
+    fill: white;
+  }
+  /* hide disabled button */
+  .flickity-button:disabled {
+    display: none;
+  }
+
+  .b-card {
+    @include respond-above(sm) {
+      width: 40%;
+      min-height: 430px;
+    }
+
+    @include respond-below(sm) {
+      width: 80%;
+      min-height: 580px;
+    }
+  }
+
+  @include respond-above(sm) {
+    .degradado {
+      width: 30%;
+      height: 100%;
+      position: absolute;
+      right: 0;
+      pointer-events: none;
+      z-index: 6;
+      background: linear-gradient(
+        90deg,
+        rgba(214, 171, 255, 0) 18%,
+        rgb(255, 255, 255) 91%
+      );
+    }
+  }
+}

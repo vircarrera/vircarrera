@@ -1,0 +1,68 @@
+//
+// Vars
+//
+
+//
+// Styles
+//
+
+.e-check {
+  display: none;
+}
+
+.e-check:checked {
+  & ~ .navcontainer {
+    @include respond-below(md) {
+      height: 80vh;
+
+      .simbolo {
+        transform: rotate(35deg);
+      }
+
+      .e-nav {
+        &.--top {
+          ul {
+            li {
+              a {
+                padding: 15px 15px;
+              }
+            }
+          }
+        }
+      }
+
+      .e-search {
+        .search__input {
+          border-bottom-color: $white;
+          @include border-brown;
+          border-radius: 30px;
+          padding: $v-unit;
+          background-color: $gradientgrey;
+          color: $white;
+          font-family: $ff-main;
+        }
+
+        .search__lupa {
+          i.ico-lupa {
+            &::before {
+              color: $white !important;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  & ~ .e-burger {
+    transform: rotate(-45deg);
+
+    img {
+      &.light {
+        display: inline-block;
+      }
+      &.dark {
+        display: none;
+      }
+    }
+  }
+}

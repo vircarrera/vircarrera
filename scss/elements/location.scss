@@ -1,0 +1,32 @@
+// Vars
+
+$location-margin-top-desktop: 13vh;
+$location-margin-top-mobile: 16vh;
+
+//
+// Styles
+//
+
+.e-location {
+  .location {
+    text-align: center;
+
+    &.one {
+      text-transform: uppercase;
+      font-family: $ff-secondary;
+      color: $brown;
+    }
+
+    &.two {
+      color: $brown;
+    }
+  }
+
+  @include respond-above(sm) {
+    margin-top: $location-margin-top-desktop;
+  }
+
+  @include respond-below(sm) {
+    margin-top: $location-margin-top-mobile;
+  }
+}
